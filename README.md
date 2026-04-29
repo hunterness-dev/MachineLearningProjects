@@ -35,6 +35,15 @@ Compare L1 (Lasso) and L2 (Ridge) regularization for polynomial regression.
 - **Results:** Lasso (R²=0.959) slightly better than Ridge (R²=0.956)
 - **Libraries:** scikit-learn (Ridge, Lasso, PolynomialFeatures), matplotlib
 
+### 6. Decision Tree for Spam Detection 🌲
+Email spam detection using Decision Tree classifier with depth tuning.
+- **Dataset:** 500 emails (250 spam, 250 normal) with 3 features
+- **Features:** word_count (0-12), link_count (0-8), email_length (100-500)
+- **Key insight:** Word count is most important feature (69.7% importance)
+- **Methods:** Depth tuning (1-14), overfitting detection, feature importance
+- **Results:** Best depth = 3, Test Accuracy = 96.0%
+- **Libraries:** scikit-learn (DecisionTreeClassifier), matplotlib
+
 ## 📊 Results Summary
 
 | Project | Best Model | Key Metric | Insight |
@@ -44,6 +53,7 @@ Compare L1 (Lasso) and L2 (Ridge) regularization for polynomial regression.
 | KNN Spam | K=5 | Accuracy = 100% | Simple data, perfect separation |
 | Polynomial CV Selection | Degree 1 (Linear) | RMSE = 62.46 | Higher degrees cause overfitting |
 | Ridge vs Lasso | Lasso (α=0.01) | R² = 0.959 | Lasso reduced 15→5 features |
+| Decision Tree Spam | Depth=3 | Accuracy = 96.0% | Word count most important (70%) |
 
 ## 🛠️ Installation
 
