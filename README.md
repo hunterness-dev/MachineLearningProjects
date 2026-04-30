@@ -53,6 +53,20 @@ Compare ensemble method (Random Forest) vs single tree (Decision Tree) on high-o
 - **Result:** Random Forest better for complex, noisy data
 - **Libraries:** scikit-learn (RandomForestClassifier, cross_val_score), matplotlib, seaborn
 
+## 📸 Project Screenshots
+
+| Project | Key Visualization | What it shows |
+|---------|------------------|----------------|
+| **Diabetes Regression** | ![Diabetes](images/diabetes_small.png) | Coefficient interpretation (standardized vs raw) - BMI most important |
+| **Polynomial GUI** | ![Polynomial GUI](images/poly_gui_small.png) | Interactive desktop app for overfitting detection (degrees 1-8) |
+| **KNN Spam** | ![KNN](images/knn_small.png) | Decision boundary with K=5 selection |
+| **Polynomial CV Selection** | ![Polynomial CV](images/poly_cv_small.png) | 5-Fold CV results with error bars - best degree = 1 |
+| **Ridge vs Lasso** | ![Ridge Lasso](images/ridge_small.png) | RMSE vs Alpha (log scale) - Lasso reduces 15→5 features |
+| **Decision Tree** | ![Decision Tree](images/dt_small.png) | Tree structure with depth=3, feature importance (word:70%) |
+| **Random Forest** | ![RF vs DT](images/rf_small.png) | ROC curves: RF (AUC=0.80) vs DT (AUC=0.69) |
+
+*Click on any image to view full size*
+
 ## 📊 Results Summary
 
 | Project | Best Model | Key Metric | Insight |
