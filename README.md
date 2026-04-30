@@ -44,6 +44,15 @@ Email spam detection using Decision Tree classifier with depth tuning.
 - **Results:** Best depth = 3, Test Accuracy = 96.0%
 - **Libraries:** scikit-learn (DecisionTreeClassifier), matplotlib
 
+### 7. Random Forest vs Decision Tree Comparison 🌲🌲
+Compare ensemble method (Random Forest) vs single tree (Decision Tree) on high-overlap data.
+- **Dataset:** 500 emails with significant class overlap (spam vs normal)
+- **Key insight:** Random Forest outperforms Decision Tree by 4% on overlapping data
+- **Metrics:** Accuracy (73% vs 69%), AUC-ROC (0.80 vs 0.69), F1-Score (0.74 vs 0.69)
+- **Analysis:** Feature importance, ROC curves, precision-recall, CV distribution
+- **Result:** Random Forest better for complex, noisy data
+- **Libraries:** scikit-learn (RandomForestClassifier, cross_val_score), matplotlib, seaborn
+
 ## 📊 Results Summary
 
 | Project | Best Model | Key Metric | Insight |
@@ -54,6 +63,7 @@ Email spam detection using Decision Tree classifier with depth tuning.
 | Polynomial CV Selection | Degree 1 (Linear) | RMSE = 62.46 | Higher degrees cause overfitting |
 | Ridge vs Lasso | Lasso (α=0.01) | R² = 0.959 | Lasso reduced 15→5 features |
 | Decision Tree Spam | Depth=3 | Accuracy = 96.0% | Word count most important (70%) |
+| Random Forest vs DT | Random Forest | Accuracy = 73% | Outperforms DT by 4% on overlapping data |
 
 ## 🛠️ Installation
 
