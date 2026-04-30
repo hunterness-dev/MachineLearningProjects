@@ -53,6 +53,16 @@ Compare ensemble method (Random Forest) vs single tree (Decision Tree) on high-o
 - **Result:** Random Forest better for complex, noisy data
 - **Libraries:** scikit-learn (RandomForestClassifier, cross_val_score), matplotlib, seaborn
 
+### 8. Hyperparameter Tuning Comparison ⚙️
+Compare GridSearchCV (exhaustive) vs RandomizedSearchCV (random sampling) for Random Forest optimization.
+- **Dataset:** 500 spam emails
+- **Parameter space:** 216 combinations (4 parameters)
+- **Results:**
+  - GridSearchCV: 72.4% CV, 180 fits, 12.3s
+  - RandomizedSearchCV: 72.1% CV, 30 fits, 3.5s (3.5x faster)
+- **Key insight:** RandomizedSearchCV achieves 99.6% of GridSearch accuracy in 28% of time
+- **Libraries:** scikit-learn (GridSearchCV, RandomizedSearchCV)
+
 ## 📸 Project Screenshots
 
 | Project | Key Visualization | What it shows |
@@ -64,6 +74,7 @@ Compare ensemble method (Random Forest) vs single tree (Decision Tree) on high-o
 | **Ridge vs Lasso** | ![Ridge Lasso](images/ridge_small.png) | RMSE vs Alpha (log scale) - Lasso reduces 15→5 features |
 | **Decision Tree** | ![Decision Tree](images/dt_small.png) | Tree structure with depth=3, feature importance (word:70%) |
 | **Random Forest** | ![RF vs DT](images/rf_small.png) | ROC curves: RF (AUC=0.80) vs DT (AUC=0.69) |
+| **Tuning Comparison** | ![Time vs Accuracy](images/tuning_time_acc.png) | **Speed-Accuracy tradeoff** - Randomized 3.5x faster with 0.3% less accuracy |
 
 *Click on any image to view full size*
 
@@ -78,6 +89,7 @@ Compare ensemble method (Random Forest) vs single tree (Decision Tree) on high-o
 | Ridge vs Lasso | Lasso (α=0.01) | R² = 0.959 | Lasso reduced 15→5 features |
 | Decision Tree Spam | Depth=3 | Accuracy = 96.0% | Word count most important (70%) |
 | Random Forest vs DT | Random Forest | Accuracy = 73% | Outperforms DT by 4% on overlapping data |
+| **Model Comparison** | GridSearch RF | CV = 72.4% | 3.5x slower than Randomized but 0.3% better |
 
 ## 🛠️ Installation
 
