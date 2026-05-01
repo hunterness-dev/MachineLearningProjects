@@ -99,6 +99,14 @@ Comprehensive 16-plot analysis of XGBoost (default & tuned) vs Random Forest for
 }
 ```
 
+### 10. Neural Network for Spam Detection 🧠
+Complete deep learning solution with TensorFlow/Keras.
+- **Architecture:** 3 hidden layers (32→16→8 neurons) with BatchNormalization
+- **Regularization:** Dropout (0.3, 0.2, 0.1) + EarlyStopping + ReduceLROnPlateau
+- **Results:** 77% accuracy, 0.83 AUC (4% better than Random Forest)
+- **Visualizations:** Training curves, ROC, Confusion Matrix, Probability distribution
+- **Libraries:** TensorFlow/Keras, scikit-learn, matplotlib
+
 ## 📸 Project Screenshots
 
 | Project | Key Visualization | What it shows |
@@ -112,6 +120,7 @@ Comprehensive 16-plot analysis of XGBoost (default & tuned) vs Random Forest for
 | **Random Forest** | ![RF vs DT](images/rf_small.png) | ROC curves: RF (AUC=0.80) vs DT (AUC=0.69) |
 | **Tuning Comparison** | ![Time vs Accuracy](images/tuning_time_acc.png) | **Speed-Accuracy tradeoff** - Randomized 3.5x faster with 0.3% less accuracy |
 | **XGBoost Comparison** | ![16 Plots](images/xgboost_16_plots.png) | **16-plot comprehensive comparison** - ROC, PR, Calibration, Radar chart, Confusion matrices, Feature importance |
+| **Neural Network** | ![NN Training](images/nn_training.png) | Loss & accuracy over 100 epochs |
 
 *Click on any image to view full size*
 
@@ -127,7 +136,24 @@ Comprehensive 16-plot analysis of XGBoost (default & tuned) vs Random Forest for
 | Decision Tree Spam | Depth=3 | Accuracy = 96.0% | Word count most important (70%) |
 | Random Forest vs DT | Random Forest | Accuracy = 73% | Outperforms DT by 4% on overlapping data |
 | **Model Comparison** | GridSearch RF | CV = 72.4% | 3.5x slower than Randomized but 0.3% better |
-| XGB VS RF | **Best Model:** XGBoost Tuned | **Accuracy:** 75.5% (+2.5% vs RF) | **AUC:** 0.825 | Best Params: n_estimators=300, max_depth=4, lr=0.05, subsample=0.8
+| XGB VS RF | **Best Model:** XGBoost Tuned | **Accuracy:** 75.5% (+2.5% vs RF) | **AUC:** 0.825 |
+
+## 📊 Neural Network Results Summary
+
+| Model | Accuracy | Precision | Recall | F1-Score | AUC |
+|-------|----------|-----------|--------|----------|-----|
+| Random Forest (Baseline) | 73.0% | 0.73 | 0.74 | 0.73 | 0.798 |
+| XGBoost Tuned | 75.5% | 0.75 | 0.76 | 0.75 | 0.825 |
+| **Neural Network** | **77.0%** | **0.77** | **0.77** | **0.77** | **0.833** |
+
+### Key Improvements:
+
+| Comparison | Improvement |
+|------------|-------------|
+| NN vs Random Forest | **+4.0%** accuracy |
+| NN vs XGBoost | **+1.5%** accuracy |
+| NN AUC | **0.833** (best among all models) |
+
 
 ## 🛠️ Installation
 
