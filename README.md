@@ -63,6 +63,42 @@ Compare GridSearchCV (exhaustive) vs RandomizedSearchCV (random sampling) for Ra
 - **Key insight:** RandomizedSearchCV achieves 99.6% of GridSearch accuracy in 28% of time
 - **Libraries:** scikit-learn (GridSearchCV, RandomizedSearchCV)
 
+### 9. XGBoost vs Random Forest Complete Comparison 🚀
+Comprehensive 16-plot analysis of XGBoost (default & tuned) vs Random Forest for spam detection.
+- **Models:** Random Forest, XGBoost Default, XGBoost Tuned (GridSearchCV)
+- **Key results:** Tuned XGBoost +2.5% accuracy over Random Forest
+- **Advanced metrics:** MCC, Log Loss, Brier Score, Calibration curves
+- **Visualizations:** ROC (AUC), PR curves, Radar chart, CV distribution, Feature importance
+- **Libraries:** xgboost, scikit-learn, matplotlib, seaborn
+
+## 📊 Final Results: XGBoost vs Random Forest
+
+| Model | Accuracy | Precision | Recall | F1-Score | AUC | CV Mean | Time (s) |
+|-------|----------|-----------|--------|----------|-----|---------|----------|
+| Random Forest | 73.0% | 0.73 | 0.74 | 0.73 | 0.798 | 70.6% | 0.09 |
+| XGBoost Default | 74.5% | 0.74 | 0.75 | 0.74 | 0.812 | 71.8% | 0.18 |
+| **XGBoost Tuned** | **75.5%** | **0.75** | **0.76** | **0.75** | **0.825** | **73.1%** | 12.30 |
+
+### Key Insights:
+
+| Metric | Improvement | Details |
+|--------|-------------|---------|
+| **Accuracy** | +2.5% | XGBoost Tuned outperforms Random Forest |
+| **AUC** | +0.027 | Better class separation (0.825 vs 0.798) |
+| **F1-Score** | +0.02 | Better precision-recall balance |
+| **Training Time** | 136x slower | Tuning comes with computational cost |
+
+### Best Parameters (XGBoost Tuned):
+
+```python
+{
+    'n_estimators': 300,
+    'max_depth': 4,
+    'learning_rate': 0.05,
+    'subsample': 0.8
+}
+```
+
 ## 📸 Project Screenshots
 
 | Project | Key Visualization | What it shows |
@@ -75,6 +111,7 @@ Compare GridSearchCV (exhaustive) vs RandomizedSearchCV (random sampling) for Ra
 | **Decision Tree** | ![Decision Tree](images/dt_small.png) | Tree structure with depth=3, feature importance (word:70%) |
 | **Random Forest** | ![RF vs DT](images/rf_small.png) | ROC curves: RF (AUC=0.80) vs DT (AUC=0.69) |
 | **Tuning Comparison** | ![Time vs Accuracy](images/tuning_time_acc.png) | **Speed-Accuracy tradeoff** - Randomized 3.5x faster with 0.3% less accuracy |
+| **XGBoost Comparison** | ![16 Plots](images/xgboost_16_plots.png) | **16-plot comprehensive comparison** - ROC, PR, Calibration, Radar chart, Confusion matrices, Feature importance |
 
 *Click on any image to view full size*
 
@@ -90,6 +127,7 @@ Compare GridSearchCV (exhaustive) vs RandomizedSearchCV (random sampling) for Ra
 | Decision Tree Spam | Depth=3 | Accuracy = 96.0% | Word count most important (70%) |
 | Random Forest vs DT | Random Forest | Accuracy = 73% | Outperforms DT by 4% on overlapping data |
 | **Model Comparison** | GridSearch RF | CV = 72.4% | 3.5x slower than Randomized but 0.3% better |
+| XGB VS RF | **Best Model:** XGBoost Tuned | **Accuracy:** 75.5% (+2.5% vs RF) | **AUC:** 0.825 | Best Params: n_estimators=300, max_depth=4, lr=0.05, subsample=0.8
 
 ## 🛠️ Installation
 
